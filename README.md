@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# MiFactura
 
-## Getting Started
+Dashboard SaaS para gestión de facturas electrónicas colombianas. Sube facturas en PDF o XML, procesa los datos con IA y visualiza métricas de facturación.
 
-First, run the development server:
+## Funcionalidades
+
+- **Upload de facturas** — Drag-and-drop de PDFs y XMLs (max. 10MB)
+- **Dashboard** — Métricas con sparklines, gráfico de actividad semanal/mensual/anual, feed de actividad reciente
+- **Historial** — Tabla completa de facturas procesadas con estado, emisor, monto y descarga
+- **Límites de uso** — Modelo freemium con límites mensuales y modal de upgrade
+- **Autenticación** — Login con Google OAuth via Supabase
+
+## Planes
+
+| Plan | Facturas/mes | Precio |
+|------|-------------|--------|
+| Gratis | 18 | $0 |
+| Pro | 500 | $49,900 COP/mes |
+| Enterprise | Ilimitadas | $199,900 COP/mes |
+
+## Stack
+
+- **Next.js 16** (App Router) + **TypeScript**
+- **React 19** + **Tailwind CSS v4**
+- **shadcn/ui** (Radix UI) — Componentes
+- **Recharts** — Gráficos de actividad
+- **Supabase** — Auth, base de datos y storage
+- **Lucide React** — Iconografía
+
+## Instalación
 
 ```bash
+npm install
+
+# Configurar Supabase en .env.local:
+# NEXT_PUBLIC_SUPABASE_URL=tu_url
+# NEXT_PUBLIC_SUPABASE_ANON_KEY=tu_anon_key
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Estructura
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+src/app/
+  dashboard/
+    page.tsx        → Dashboard principal
+    upload/         → Página de upload
+    history/        → Historial de facturas
+  login/            → Login con Google
+src/components/
+  sidebar.tsx       → Navegación lateral
+  stat-card.tsx     → Tarjetas KPI con sparkline
+  upload-zone.tsx   → Zona de drag-and-drop
+  invoice-chart.tsx → Gráfico de barras
+  upgrade-modal.tsx → Modal de upgrade de plan
+src/lib/supabase/   → Clientes browser y server
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Autor
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Cristian Espinal — [@Cespial](https://github.com/Cespial)
