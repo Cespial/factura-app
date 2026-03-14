@@ -1,6 +1,11 @@
-# MiFactura
+# FacturaApp
 
-Dashboard SaaS para gestión de facturas electrónicas colombianas. Sube facturas en PDF o XML, procesa los datos con IA y visualiza métricas de facturación.
+> Dashboard SaaS para gestión de facturas electrónicas colombianas (DIAN) — importación XML/JSON, catálogo de productos, reportes tributarios y análisis por cliente/periodo.
+
+[![Next.js](https://img.shields.io/badge/Next.js-16-000?logo=next.js)](https://nextjs.org)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org)
+[![Supabase](https://img.shields.io/badge/Supabase-3FCF8E?logo=supabase&logoColor=white)](https://supabase.com)
+[![Recharts](https://img.shields.io/badge/Recharts-22B5BF)](https://recharts.org)
 
 ## Funcionalidades
 
